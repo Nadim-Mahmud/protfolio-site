@@ -1,0 +1,2 @@
+* chrome scrolled to top issue
+* if nav shadow enable then scroll anchoring disbled on mozila
