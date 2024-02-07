@@ -6,68 +6,103 @@ html {
 }
 
 :root {
-    --accent-color-dark: black;
-    --color-white: #ffffff;
-    --bg-green-dark: #2aa876;
+    --bg-green: #2aa876;
+
+    --bg-color: #ffffff;
+    --bg-color-contrast: #222222;
+    --text-color: #222222;
+
+    --bg-green-theme: #d1e7dd;
+    --bg-green-theme-contrast: #2aa876;
+    --bg-yellow-theme: #fff3cd;
+    --bg-yellow-theme-contrast: ##ffc107cf;
+    --shadow-theme: #ccc;
 }
 
-.bg-accent-dark{
-    background-color: var(--bg-green-dark);
+.dark-theme {
+    --bg-color: #222222;
+    --bg-color-contrast: #ffffff;
+    --text-color: #ffffff;
+
+    --bg-green-theme: #2aa876;
+    --bg-green-theme-contrast: #d1e7dd;
+    --bg-yellow-theme: #ffc107cf;
+    --bg-yellow-theme-contrast: #fff3cd;
+    --shadow-theme: #5e5e5e;
 }
+
+.bg-green-theme {
+    background-color: var(--bg-green-theme);
+}
+
+.bg-green-theme-contrast {
+    background-color: var(--bg-green-theme-contrast);
+}
+
+.bg-yellow-theme {
+    background-color: var(--bg-yellow-theme);
+}
+
+.bg-yellow-theme-coontrast {
+    background-color: var(--bg-yellow-theme-contrast);
+}
+
+.bg-green {
+    background-color: var(--bg-green);
+}
+
 
 p {
-	color: #5e6576;
-	font: 400 1rem/1.625rem "Open Sans", sans-serif;
+    color: #5e6576;
+    font: 400 1rem/1.625rem "Open Sans", sans-serif;
     line-height: 1.2rem;
 }
 
 h1 {
-	color: #222222;
-	font-weight: 600;
-	font-size: 2.5rem;
-	line-height: 3.25rem;
-	letter-spacing: -0.4px;
+    color: var(--text-color);
+    font-weight: 600;
+    font-size: 2.5rem;
+    line-height: 3.25rem;
+    letter-spacing: -0.4px;
 }
 
 h2 {
-	color: #222222;
-	font-weight: 600;
-	font-size: 2rem;
-	line-height: 2.625rem;
-	letter-spacing: -0.4px;
+    color: var(--text-color);
+    font-weight: 600;
+    font-size: 2rem;
+    line-height: 2.625rem;
+    letter-spacing: -0.4px;
 }
 
 h3 {
-	color: #222222;
-	font-weight: 600;
-	font-size: 1.75rem;
-	line-height: 2.25rem;
-	letter-spacing: -0.2px;
+    color: var(--text-color);
+    font-weight: 600;
+    font-size: 1.75rem;
+    line-height: 2.25rem;
+    letter-spacing: -0.2px;
 }
 
 h4 {
-	color: #222222;
-	font-weight: 600;
-	font-size: 1.5rem;
-	line-height: 2rem;
-	letter-spacing: -0.2px;
+    color: var(--text-color);
+    font-weight: 600;
+    font-size: 1.5rem;
+    line-height: 2rem;
+    letter-spacing: -0.2px;
 }
 
 h5 {
-	color: #222222;
-	font-weight: 600;
-	font-size: 1.25rem;
-	line-height: 1.625rem;
+    color: var(--text-color);
+    font-weight: 600;
+    font-size: 1.25rem;
+    line-height: 1.625rem;
 }
 
 h6 {
-	color: #222222;
-	font-weight: 600;
-	font-size: 1rem;
-	line-height: 1.375rem;
+    color: var(--text-color);
+    font-weight: 600;
+    font-size: 1rem;
+    line-height: 1.375rem;
 }
-
- 
 
 body {
     width: 100%;
@@ -75,39 +110,32 @@ body {
     margin: 0;
     padding: 0;
     text-align: left;
-    background-color: white;
+    background-color: var(--bg-color);
 }
 
-.parent-container{
+.parent-container {
     margin: 0;
     padding: 0;
 }
 
-
-.bg-accent-color{
-    background: #ffffff;    ;
+.text-accent-color {
+    color: var(--text-color);
 }
 
-.text-accent-color{
-    color: var(--accent-color-dark);
-}
-
-.bg-set-white{
-    background-color: #ffffff;
+.bg-color {
+    background-color: var(--bg-color);
 }
 
 .heading {
     -webkit-text-stroke: 4px;
 }
 
-
-
 /*=============== navigation bar ==========*/
 
 .navbar {
     padding-top: 1.75rem;
     z-index: 1;
-    background-color: #ffffff;
+    background-color: var(--bg-color);
     box-shadow: none;
     transition: all 0.2s;
 }
@@ -118,98 +146,118 @@ body {
     box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.05);
 }
 
-.logo-icon{
+.logo-icon {
     font-family: 'Pacifico', cursive;
     font-size: 20px;
-    color: black;
+    color: var(--bg-color-contrast);
+}
+
+.nav-link {
+    color: var(--bg-color-contrast);
 }
 
 .logo-icon:hover,
 .navbar .nav-item.dropdown.show .nav-link,
 .navbar .nav-item .nav-link:hover,
 .navbar .nav-item .nav-link.active {
-	color: var(--bg-green-dark);
+    color: var(--bg-green);
+}
+
+.theme-icon {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
+.navbar-toggler-icon {
+    background-color: white;
 }
 
 /*============= Body head ===========*/
 
 .header {
-	padding-top: 0rem;
-	padding-bottom: 0rem;
-	text-align: center;
+    padding-top: 0rem;
+    padding-bottom: 0rem;
+    text-align: center;
 }
 
-.name-h1{
-    -webkit-text-stroke: 4px var(--accent-color-dark);
+.name-h1 {
+    -webkit-text-stroke: 4px var(--text-color);
 }
 
-.about-img{
+.about-img {
     margin-left: 0px;
     right: -10px;
 }
 
 @media (max-width: 960px) {
-    .about-img{
-         margin: 30px 0px 0px 0px;
-         right: 0px;
-         top: 0px;
-     }
- }
+    .about-img {
+        margin: 30px 0px 0px 0px;
+        right: 0px;
+        top: 0px;
+    }
+}
 
-.btn{
+.btn {
     padding: 5px 20px;
     border-radius: 100px;
-    border: 1px solid var(--bg-green-dark);
-} 
-
-.btn-cv{
-    background-color: var(--color-white);
+    border: 1px solid var(--bg-green);
 }
 
-.btn-cv:hover{
-    color: var(--color-white);
-    background-color: var(--bg-green-dark);
+.btn-cv {
+    background-color: white;
+    box-shadow: 0px 4px 16px 0px var(--shadow-theme);
+    transition: all .2s ease-in-out;
 }
-  
-.btn-about{
+
+.btn-cv:hover {
+    color: var(--bg-color);
+    background-color: var(--bg-green);
+    transform: scale(1.1);
+}
+
+.btn-about {
     margin-left: 10px;
-    color: var(--color-white);
-    background-color: var(--bg-green-dark);
+    color: var(--bg-color);
+    background-color: var(--bg-green);
+    box-shadow: 0px 4px 16px 0px var(--shadow-theme);
+    transition: all .2s ease-in-out;
 }
 
-.btn-about:hover{
+.btn-about:hover {
     background-color: #ffffff;
-    border: 1px solid var(--bg-green-dark);
+    border: 1px solid var(--bg-green);
+    transform: scale(1.1);
 }
 
 
 /* ================  About Section ============= */
 
-.heading-about{
+.heading-about {
     -webkit-text-stroke: 4px;
 }
 
-.about-img{
+.about-img {
     margin-top: 30px;
 }
 
-.about-text{
+.about-text {
     text-align: justify;
     text-justify: inter-word;
 }
 
-/* Work Experience Section */
+/* timeline card*/
 
 .contents {
     padding: 0px 30px;
-    border-left: 4px solid var(--accent-color-dark);
+    border-left: 4px solid var(--text-color);
+    transition: all .2s ease-in-out;
 }
 
 .box {
     position: relative;
     padding: 20px;
-    border: 1px solid #eaeaea;
-    background-color: var(--color-white);
+    border: 1px solid var(--bg-color);
     border-radius: 7px;
     cursor: pointer;
     transition: all .4s;
@@ -219,9 +267,10 @@ body {
 .contents .box:hover {
     box-shadow: 0px 2px 12px 0px #ccc;
     border: 1px solid transparent;
+    /* transform: scale(1.1); */
 }
 
-.contents .box::before{
+.contents .box::before {
     content: '';
     position: absolute;
     width: 25px;
@@ -229,65 +278,23 @@ body {
     border-radius: 50%;
     right: calc(100% + 20px);
     top: 0;
-    background-color: var(--bg-green-dark);
+    background-color: var(--bg-green-theme-contrast);
     border: 4px solid white;
 }
 
-.work-icon{
+.work-icon {
     width: 70%;
     height: auto;
 }
 
-/* ============== Education Section =============== */
-
-.heading-education{
-    -webkit-text-stroke: 4px;
-}
-
-.education-cards{
-    box-shadow: 0px 1px 7px rgba(0, 0, 0, 0.1);
-    border-radius: 2%;
-    padding: 10px;
-    margin: 10px;
-}
-.education-cards:hover{
-    box-shadow: 0px 1px 13px rgba(27, 27, 27, 0.7);
-    transform: translateY(-3px);
-}
-
-
-/* ======== skilss =========================== */
-
-.skills-icons{
-    max-height: 55px;
-    max-width: 55px;
-    margin-right: 15px;
-}
-
-.skills-cards{
-    box-shadow: 0px 1px 7px rgba(0, 0, 0, 0.1);
-    border-radius: 2%;
-    padding: 10px;
-    margin: 10px;
-}
-.skills-cards:hover{
-    box-shadow: 0px 1px 13px rgba(27, 27, 27, 0.7);
-    transform: translateY(-3px);
-}
-
-.skills-details{
-    text-align: justify;
-    text-justify: inter-word;
-}
-
 /* ========================= Footer ================ */
 
-.footer-social-buttons{
+.footer-social-buttons {
     color: black;
     margin-right: 20px;
 }
 
-.footer-social-buttons:hover{
+.footer-social-buttons:hover {
     color: rgb(255, 255, 255);
     transform: scale(1.2);
 }
