@@ -14,16 +14,13 @@
     <!-- SEO -->
     <meta name="robots" content="index, follow" />
     <meta
-      name="keywords"
-      content="Nadim Mahmud, Software Engineer, web development, mobile app development, game development, Programmer, Problem Solver"
-    />
-    <meta
       name="description"
-      content="Nadim Mahmud: Software Engineer, Problem Solver, Computer Science & Engineering Graduate."
+      content="Nadim Mahmud – Software Engineer & Researcher. Building smart and accessible software solutions in web, mobile, and AI."
     />
     <meta name="author" content="Nadim Mahmud" />
     <link rel="canonical" href="https://nadimmahmud.net" />
 
+    <meta property="og:locale" content="en_US" />
     <meta property="og:site_name" content="Nadim Mahmud" />
     <meta property="og:site" content="https://nadimmahmud.net" />
     <meta property="og:title" content="Home - Nadim Mahmud" />
@@ -43,10 +40,7 @@
     />
     <meta property="og:image:width" content="427" />
     <meta property="og:image:height" content="320" />
-    <meta
-      name="twitter:card"
-      content="https://nadimmahmud.net/asset/nadim.jpg"
-    />
+    <meta name="twitter:card" content="summary_large_image" />
     <!-- to have large image post format in Twitter -->
     <meta
       name="twitter:title"
@@ -61,6 +55,20 @@
       content="https://nadimmahmud.net/asset/nadim.jpg"
     />
     <meta name="twitter:site" content="@NadimMahmud" />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Nadim Mahmud",
+        "url": "https://nadimmahmud.net",
+        "sameAs": [
+          "https://github.com/NadimMahmud",
+          "https://linkedin.com/in/NadimMahmud"
+        ],
+        "jobTitle": "Software Engineer & Researcher"
+      }
+    </script>
 
     <!-- END SEO -->
 
@@ -112,7 +120,12 @@
       aria-label="Main navigation"
     >
       <div class="container">
-        <a class="navbar-brand logo-icon" href="index.html">Nadim Mahmud</a>
+        <!-- Brand -->
+        <a class="navbar-brand logo-icon fw-bold" href="index.html"
+          >Nadim Mahmud</a
+        >
+
+        <!-- Toggler for mobile -->
         <button
           class="navbar-toggler"
           type="button"
@@ -124,29 +137,39 @@
         >
           <span class="navbar-toggler-icon"></span>
         </button>
+
+        <!-- Navbar links -->
         <div class="collapse navbar-collapse ps-4" id="navbarSupportedContent">
-          <ul
-            class="navbar-nav navbar-nav-scroll me-auto mb-2 mb-lg-0 fw-medium"
-          >
-            <li class="nav-item nav-collapse-btn">
-              <a class="nav-link" href="#about">About</a>
-            </li>
-            <li class="nav-item nav-collapse-btn">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0 fw-medium">
+            <li class="nav-item">
               <a class="nav-link" href="#experience">Experience</a>
             </li>
-            <li class="nav-item nav-collapse-btn">
+            <li class="nav-item">
+              <a class="nav-link" href="#projects">Projects</a>
+            </li>
+            <li class="nav-item">
               <a class="nav-link" href="#education">Education</a>
             </li>
-            <li class="nav-item nav-collapse-btn">
+            <li class="nav-item">
               <a class="nav-link" href="#publications">Publications</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#contact">Contact</a>
             </li>
           </ul>
 
-          <img
-            class="theme-icon nav-collapse-btn"
-            id="theme-icon"
-            src="assets/icons/moon.png"
-          />
+          <!-- Theme toggle icon -->
+          <button
+            class="btn btn-theme p-0 border-0 bg-transparent"
+            aria-label="Toggle theme"
+          >
+            <img
+              id="theme-icon"
+              class="theme-icon"
+              src="assets/icons/moon.png"
+              alt="Toggle theme"
+            />
+          </button>
         </div>
       </div>
     </nav>
@@ -157,33 +180,45 @@
         <div class="container my-sm-4">
           <div class="row align-items-center">
             <div class="col-lg-7 text-center py-5">
-              <section class="about-sec text-black">
-                <h3 class="fw-normal mb-3">Hello, This is</h3>
-                <h1 class="display-3 mb-2 name-h1">NADIM MAHMUD</h1>
-                <h1 class="typed-text fw-lighter">Researcher</h1>
+              <section class="about-sec text-black text-start">
+                <h3 class="fw-light mb-2 text-secondary">Hello, I’m</h3>
+                <h1 class="display-3 mb-1 name-h1">Nadim Mahmud</h1>
+                <h2 class="typed-text fw-normal">
+                  Software Engineer & Researcher
+                </h2>
+                <p class="mb-0">
+                  Designing and developing smart, accessible software solutions
+                  while conducting research on innovative technologies and their
+                  real-world applications.
+                </p>
               </section>
 
               <div
-                class="d-flex align-items-center justify-content-center pt-4"
+                class="d-flex flex-wrap align-items-start justify-content-start pt-4 gap-3"
               >
                 <a
                   href="assets/pdf/Nadim_Mahmud_Resume.pdf"
-                  class="btn mr-4 btn-cv"
+                  class="btn btn-cv d-flex align-items-center"
                   target="_blank"
                 >
-                  View CV
+                  <i class="fas fa-file-alt me-2"></i>
+                  View Resume
                 </a>
-                <a href="#about" class="btn btn-about d-none d-sm-block"
-                  >About Me</a
+                <a
+                  href="#about"
+                  class="btn btn-about d-none d-sm-flex align-items-center"
                 >
+                  <i class="fas fa-user me-2"></i>
+                  About Me
+                </a>
               </div>
             </div>
             <div
               class="col-lg-5 px-8 pl-lg-0 pb-5 pb-lg-4 align-items-center about-img"
             >
               <img
-                class="img-fluid w-100 rounded-circle shadow-lg"
-                src="assets/photos/nadim-3.png"
+                class="img-fluid w-100"
+                src="assets/photos/nadim.png"
                 alt="Nadim Mahmud"
               />
             </div>
@@ -192,43 +227,48 @@
       </header>
 
       <!-- ================= About Section ================= -->
-      <div class="container my-sm-5" id="about">
+
+      <!-- <div class="container my-sm-5" id="about">
         <div
           class="position-relative d-flex align-items-center justify-content-center py-sm-5"
         >
           <h1 class="display-3 text-uppercase heading">A B O U T &nbsp; M E</h1>
-        </div>
+        </div> 
+
         <div class="row align-items-center mt-4">
-          <div class="col-lg-5">
+          <div class="col-lg-5 mb-4 mb-lg-0">
             <img
-              class="image-fluid rounded w-100"
+              class="img-fluid rounded shadow-sm w-100"
               src="assets/photos/nadim-2.jpeg"
+              alt="Md Nadim Mahmud"
             />
           </div>
+
           <div class="col-lg-7 py-2">
-            <h3 class="mb-3">
+            <h3 class="mb-3 text-dark fw-bold">
               Researcher | Software Engineer | Problem Solver
             </h3>
-            <p class="about-text">
-              I am currently a Graduate Assistant at Miami University, where I
-              am working on fine-tuning Large Language Models (LLMs) using LoRA
-              and exploring Retrieval-Augmented Generation (RAG) techniques
-              along with other AI models. My background is enriched by my
-              experience as a competitive programmer, having participated in
-              prestigious events like ACM ICPC. Previously, I worked as a
-              Software Engineer at Therap BD Ltd., where I developed strong
-              problem-solving and analytical thinking skills. My combined
-              experience in academia, research, and industry enables me to
-              contribute effectively to both technical projects and the academic
-              community.
+
+            <p class="about-text mb-3">
+              I am a Graduate Assistant at <strong>Miami University</strong>,
+              focusing on fine-tuning Large Language Models (LLMs) using
+              <strong>LoRA</strong> and exploring
+              <strong>Retrieval-Augmented Generation (RAG)</strong> techniques.
+              My background in competitive programming, including
+              <strong>ACM ICPC</strong>, and industry experience as a Software
+              Engineer at <strong>Therap BD Ltd.</strong>, equips me with strong
+              problem-solving and analytical skills. I combine research,
+              academia, and industry experience to build impactful software
+              solutions and contribute to innovative projects.
             </p>
-            <div class="row mb-sm-4">
-              <div class="col-sm-6 py-2 text-dark">
+
+            <div class="row g-3 mt-3">
+              <div class="col-sm-6">
                 <h6>
                   Name: <span class="text-secondary">Md Nadim Mahmud</span>
                 </h6>
               </div>
-              <div class="col-sm-6 py-1 text-dark">
+              <div class="col-sm-6">
                 <h6>
                   Degree:
                   <span class="text-secondary"
@@ -236,36 +276,33 @@
                   >
                 </h6>
               </div>
-              <div class="col-sm-6 py-1 text-dark">
+              <div class="col-sm-6">
                 <h6>
                   Designation:
                   <span class="text-secondary">Graduate Assistant</span>
                 </h6>
               </div>
-              <div class="col-sm-6 py-1 text-dark">
+              <div class="col-sm-6">
                 <h6>
-                  linkedin:
-                  <span>
-                    <a
-                      class="link-info"
-                      href="https://www.linkedin.com/in/nadim-mahmud111/"
-                      target="_blank"
-                    >
-                      nadim121
-                    </a>
-                  </span>
-                </h6>
-              </div>
-              <div class="col-sm-6 py-1 text-dark">
-                <h6>
-                  Email:<span class="text-secondary">
-                    mahmudm2@miamioh.edu</span
+                  LinkedIn:
+                  <a
+                    class="link-info"
+                    href="https://www.linkedin.com/in/nadim-mahmud111/"
+                    target="_blank"
                   >
+                    nadim121
+                  </a>
                 </h6>
               </div>
-              <div class="col-sm-6 py-1 text-dark">
+              <div class="col-sm-6">
                 <h6>
-                  Current Address:
+                  Email:
+                  <span class="text-secondary">mahmudm2@miamioh.edu</span>
+                </h6>
+              </div>
+              <div class="col-sm-6">
+                <h6>
+                  Location:
                   <span class="text-secondary">Oxford, Ohio, USA</span>
                 </h6>
               </div>
@@ -273,6 +310,7 @@
           </div>
         </div>
       </div>
+      -->
 
       <!-- WORK EXPERIENCE Section -->
 
@@ -280,244 +318,614 @@
         <div
           class="position-relative d-flex align-items-center justify-content-center py-sm-5"
         >
-          <h1 class="display-3 text-accent-color heading">
-            E X P E R I E N C E
-          </h1>
+          <h1 class="text-accent-color heading">E x p e r i e n c e</h1>
         </div>
-        <div class="contents">
-          <div class="box bg-yellow-theme">
-            <div class="row">
-              <div class="col-2">
-                <img
-                  class="rounded work-icon"
-                  src="assets/icons/miami-university-logo.svg"
-                  alt="Thearp Logo"
-                />
-              </div>
-              <div class="col">
-                <p class="fs-6 fw-light fst-italic">Aug 2024 - May 2025</p>
-                <h6 class="fs-5 fw-bold">Graduate Assistant</h6>
-                <h6>
-                  Miami University |
-                  <a
-                    href="https://miamioh.edu/"
-                    class="link-info"
-                    target="_blank"
-                    >visit</a
-                  >
-                </h6>
-              </div>
-            </div>
-          </div>
-          <div class="box bg-yellow-theme">
-            <div class="row">
-              <div class="col-2">
-                <img
-                  class="rounded work-icon"
-                  src="assets/icons/therapbd_logo.jpeg"
-                  alt="Thearp Logo"
-                />
-              </div>
-              <div class="col">
-                <p class="fs-6 fw-light fst-italic">Nov 2023 - July 2024</p>
-                <h6 class="fs-5 fw-bold">Software Engineer</h6>
-                <h6>
-                  Thearp (BD) Ltd. |
-                  <a
-                    href="https://therapbd.com/"
-                    class="link-info"
-                    target="_blank"
-                    >visit</a
-                  >
-                </h6>
-                <p class="fs-6">
-                  <b>Tech Stack: </b>
-                  <span>
-                    JavaScript, Hibernate, OracleSQL, Jsp, JavaScript, jQuery
-                  </span>
-                </p>
+
+        <div class="timeline">
+          <!-- Graduate Assistant -->
+          <div class="timeline-item">
+            <div class="timeline-date">Aug 2024 - May 2026</div>
+            <div class="timeline-content">
+              <h3>Graduate Assistant</h3>
+              <h5>
+                <a
+                  href="https://miamioh.edu/"
+                  target="_blank"
+                  class="company-link"
+                >
+                  Miami University
+                </a>
+              </h5>
+              <ul>
+                <li>Working on LLM and RAG (Retrieval-Augmented Generation)</li>
+                <li>Research on wheelchair accessibility solutions</li>
+                <li>
+                  Camera-mmWave fusion and machine learning detection for
+                  autonomous driving and road mapping
+                </li>
+              </ul>
+              <div class="timeline-tags">
+                <span class="tag">Python</span>
+                <span class="tag">Java</span>
+                <span class="tag">Machine Learning</span>
+                <span class="tag">Deep Learning</span>
+                <span class="tag">LLM</span>
+                <span class="tag">RAG</span>
               </div>
             </div>
           </div>
-          <div class="box bg-yellow-theme">
-            <div class="row">
-              <div class="col-2">
-                <img
-                  class="rounded work-icon"
-                  src="assets/icons/therapbd_logo.jpeg"
-                  alt="Thearp Logo"
-                />
-              </div>
-              <div class="col">
-                <p class="fs-6 fw-light fst-italic">Oct 2022 - Nov 2023</p>
-                <h6 class="fs-5 fw-bold">Associate Software Engineer</h6>
-                <h6 class="fs-6">
-                  Thearp (BD) Ltd. |
-                  <a
-                    href="https://therapbd.com/"
-                    class="link-info"
-                    target="_blank"
-                    >visit</a
-                  >
-                </h6>
-                <p class="fs-6">
-                  <b>Tech Stack: </b>
-                  <span>
-                    JavaScript, Hibernate, OracleSQL, Jsp, JavaScript, jQuery
-                  </span>
-                </p>
+
+          <!-- Therap (BD) Ltd. -->
+          <div class="timeline-item">
+            <div class="timeline-date">Oct 2022 - Jul 2024</div>
+            <div class="timeline-content">
+              <h3>Software Engineer</h3>
+              <h5>
+                <a
+                  href="https://therapbd.com/"
+                  target="_blank"
+                  class="company-link"
+                >
+                  Therap (BD) Ltd.
+                </a>
+              </h5>
+              <p>Nov 2023 - Jul 2024 · Dhaka, Bangladesh · On-site</p>
+              <ul>
+                <li>
+                  Played a key role in developing a scalable push notification
+                  framework, used by millions of users
+                </li>
+                <li>
+                  Developed Excel upload/download solutions using internal
+                  frameworks, improving data entry efficiency by 80%
+                </li>
+                <li>
+                  Implemented advanced archive and search functionality with
+                  internal frameworks
+                </li>
+                <li>Developed database migration scripts</li>
+                <li>
+                  Conducted thorough code reviews, ensuring quality and best
+                  practices
+                </li>
+              </ul>
+
+              <h3>Associate Software Engineer</h3>
+              <h5>
+                <a
+                  href="https://therapbd.com/"
+                  target="_blank"
+                  class="company-link"
+                >
+                  Therap (BD) Ltd.
+                </a>
+              </h5>
+              <p>Oct 2022 - Oct 2023 · Dhaka, Bangladesh · On-site</p>
+              <ul>
+                <li>
+                  Completed a 3-month intensive training in Java EE, Spring,
+                  Hibernate, and coding best practices
+                </li>
+                <li>
+                  Developed and presented an e-commerce website, showcasing
+                  training concepts
+                </li>
+                <li>
+                  Refactored legacy code using Java 8 features (Enums, Streams)
+                  and SOLID principles for better maintainability
+                </li>
+                <li>
+                  Conducted code reviews to ensure clean coding standards and
+                  effective design patterns
+                </li>
+                <li>
+                  Collaborated with project managers and senior developers to
+                  drive innovative solutions
+                </li>
+              </ul>
+
+              <p>
+                <b>Tech Stack:</b> Java Spring Framework, Hibernate, Oracle SQL,
+                JSP, JavaScript, jQuery
+              </p>
+              <div class="timeline-tags">
+                <span class="tag">Java</span>
+                <span class="tag">Java Spring Framework</span>
+                <span class="tag">Hibernate</span>
+                <span class="tag">Oracle SQL</span>
+                <span class="tag">JSP</span>
+                <span class="tag">JavaScript</span>
+                <span class="tag">jQuery</span>
               </div>
             </div>
           </div>
-          <div class="box bg-yellow-theme">
-            <div class="row">
-              <div class="col-2">
-                <img
-                  class="rounded work-icon"
-                  src="assets/icons/samsug_logo.jpg"
-                  alt="Samsung Logo"
-                />
-              </div>
-              <div class="col">
-                <p class="fs-6 fw-light fst-italic">July 2022 - Sept 2022</p>
-                <h6 class="fs-5 fw-bold">Engineer I</h6>
-                <h6 class="fs-6">
-                  Samsung R & D Bangladesh |
-                  <a
-                    href="https://research.samsung.com/srbd"
-                    class="link-info"
-                    target="_blank"
-                    >visit</a
-                  >
-                </h6>
-                <p class="fs-6">
-                  <b>Tech Stack: </b>
-                  <span> Android Appplication Development, RTOS </span>
-                </p>
+
+          <!-- Samsung R&D Institute -->
+          <div class="timeline-item">
+            <div class="timeline-date">Jul 2022 - Sep 2022</div>
+            <div class="timeline-content">
+              <h3>Engineer I</h3>
+              <h5>
+                <a
+                  href="https://research.samsung.com/srbd"
+                  target="_blank"
+                  class="company-link"
+                >
+                  Samsung R&D Institute Bangladesh
+                </a>
+              </h5>
+              <p>Full-time · Dhaka, Bangladesh · On-site</p>
+              <ul>
+                <li>Passed Samsung's professional level test for employees</li>
+                <li>Worked on Samsung smart rings communication module</li>
+              </ul>
+              <p><b>Tech Stack:</b> Android Application Development, RTOS</p>
+              <div class="timeline-tags">
+                <span class="tag">Android</span>
+                <span class="tag">RTOS</span>
               </div>
             </div>
           </div>
         </div>
       </div>
 
+      <!-- Portfoio section -->
+
+      <section id="projects" class="py-5">
+        <div class="container">
+          <div
+            class="position-relative d-flex align-items-center justify-content-center py-sm-5"
+          >
+            <h1 class="display-3 text-accent-color heading">P r o j e c t s</h1>
+          </div>
+
+          <div class="row g-4 mt-4">
+            <!-- MyPath Project -->
+            <div class="col-md-6 col-lg-4">
+              <div class="card portfolio-card h-100">
+                <img
+                  src="./assets/photos/mypath_route.jpeg"
+                  class="card-img-top"
+                  alt="MyPath Project"
+                />
+                <div class="card-body">
+                  <h5 class="card-title">
+                    MyPath – Wheelchair-Accessible Routing Backend (NIDILRR
+                    Funded)
+                  </h5>
+                  <p class="card-subtitle mb-2 text-secondary">
+                    Nov 2024 – Present
+                  </p>
+                  <p class="card-text">
+                    Worked on Java Spring Boot API to generate
+                    wheelchair-accessible sortest routes based on
+                    latitude-longitude queries. Returns routes with surface
+                    type, incline, turns, and duration for optimized
+                    accessibility.
+                  </p>
+                  <span class="timeline-tags">
+                    <span class="tag">Java</span>
+                    <span class="tag">Spring Boot</span>
+                    <span class="tag">API Development</span>
+                    <span class="tag">Routing Algorithms</span>
+                    <span class="tag">Open Street Map</span>
+                  </span>
+                  <a
+                    href="https://mypathar.github.io/index.html"
+                    class="btn btn-portfolio mt-2"
+                    target="_blank"
+                    >Visit our page</a
+                  >
+                </div>
+              </div>
+            </div>
+
+            <!-- Online Restaurant Management System -->
+            <div class="col-md-6 col-lg-4">
+              <div class="card portfolio-card h-100">
+                <img
+                  src="./assets/photos/restaurant_management.png"
+                  class="card-img-top"
+                  alt="Restaurant Management Project"
+                />
+                <div class="card-body">
+                  <h5 class="card-title">
+                    Online Restaurant Management System
+                  </h5>
+                  <p class="card-subtitle mb-2 text-muted">
+                    Jan 2023 – Apr 2023
+                  </p>
+                  <p class="card-text">
+                    Implemented order processing, table management, and user
+                    profile management with secure login. Ensured security with
+                    input validation, custom exception handling, and request
+                    filtering.
+                  </p>
+
+                  <span class="timeline-tags">
+                    <span class="tag">Java</span>
+                    <span class="tag">Spring MVC</span>
+                    <span class="tag">Hibernate</span>
+                    <span class="tag">PostgreSQL</span>
+                    <span class="tag">JSP</span>
+                    <span class="tag">Gradle</span>
+                    <span class="tag">Tomcat</span>
+                  </span>
+
+                  <a
+                    href="https://github.com/Nadim-Mahmud/e-restaurant-xml"
+                    class="btn btn-portfolio mt-2"
+                    target="_blank"
+                    >Project Link</a
+                  >
+                </div>
+              </div>
+            </div>
+
+            <!-- RU Contacts App -->
+            <div class="col-md-6 col-lg-4">
+              <div class="card portfolio-card h-100">
+                <img
+                  src="./assets/photos/rucontacts.jpeg"
+                  class="card-img-top"
+                  alt="RU Contacts App"
+                />
+                <div class="card-body">
+                  <h5 class="card-title">RU Contacts App (RU Funded)</h5>
+                  <p class="card-subtitle mb-2 text-muted">2022</p>
+                  <p class="card-text">
+                    Developed a contacts app for Rajshahi University using
+                    Android Studio and Kotlin. Implemented MVVM architecture for
+                    better maintainability and scalability.
+                  </p>
+                  <span class="timeline-tags">
+                    <span class="tag">Android</span>
+                    <span class="tag">Kotlin</span>
+                    <span class="tag">MVVM</span>
+                  </span>
+                  <a
+                    href="https://play.google.com/store/search?q=ru+contacts+app&c=apps&hl=en_US"
+                    class="btn btn-portfolio mt-2"
+                    target="_blank"
+                    >Google Play Link</a
+                  >
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+              <div class="card portfolio-card h-100">
+                <img
+                  src="./assets/photos/crosswalk_detection.jpeg"
+                  class="card-img-top"
+                  alt="Zero-Shot Crosswalk Detection Project"
+                />
+                <div class="card-body">
+                  <h5 class="card-title">
+                    Zero-Shot Crosswalk Detection from GeoTIFF Data using Prompt
+                    Engineering
+                  </h5>
+                  <p class="card-subtitle mb-2 text-muted">
+                    Nov 2024 – Dec 2024
+                  </p>
+                  <p class="card-text">
+                    Processed GeoTIFF satellite images and OpenStreetMap (OSM)
+                    data for analysis. Applied zero-shot learning with GPT-4o to
+                    detect crosswalks from high-resolution GIS imagery without
+                    labeled training data, achieving
+                    <strong>97.5% accuracy</strong>.
+                  </p>
+                  <span class="timeline-tags">
+                    <span class="tag">Python</span>
+                    <span class="tag">GPT-4o</span>
+                    <span class="tag">Zero-Shot Learning</span>
+                    <span class="tag">Remote Sensing</span>
+                    <span class="tag">GIS</span>
+                  </span>
+                  <a
+                    href="https://nadimmahmud.net/assets/pdf/AAAI_2025.pdf"
+                    class="btn btn-portfolio mt-2"
+                    target="_blank"
+                  >
+                    Paper Link
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+              <div class="card portfolio-card h-100">
+                <img
+                  src="./assets/photos/road_scalatonization.jpeg"
+                  class="card-img-top"
+                  alt="Road Scalatonization Project"
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Road Scalatonization</h5>
+                  <p class="card-subtitle mb-2 text-muted">March 2025</p>
+                  <p class="card-text">
+                    Developed a deep learning model to recover thin skeletons
+                    from thick, noisy road network images from OpenStreetMap
+                    (OSM). Used U-Net with residual blocks, iterative thinning,
+                    and multi-task learning for accurate skeletonization.
+                  </p>
+                  <span class="timeline-tags">
+                    <span class="tag">Python</span>
+                    <span class="tag">PyTorch</span>
+                    <span class="tag">U-Net</span>
+                    <span class="tag">Deep Learning</span>
+                    <span class="tag">Computer Vision</span>
+                  </span>
+                  <a
+                    href="https://github.com/Nadim-Mahmud/Road-Skeletonization/tree/main"
+                    class="btn btn-portfolio mt-2"
+                    target="_blank"
+                    >Project Link</a
+                  >
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+              <div class="card portfolio-card h-100">
+                <img
+                  src="./assets/photos/activity_detection.png"
+                  class="card-img-top"
+                  alt="Human Activity Recognition Project"
+                />
+                <div class="card-body">
+                  <h5 class="card-title">
+                    Human Activity Recognition & Ablastion Study
+                  </h5>
+                  <p class="card-subtitle mb-2 text-muted">
+                    Jan 2023 – Apr 2023
+                  </p>
+                  <p class="card-text">
+                    This project detects human activities using form IMU sensor
+                    data. The dataset includes 15 users performing various
+                    activities. Features are extracted using a sliding window
+                    approach, and multiple models (Random Forest, XGBoost, CNN,
+                    Logistic Regression) are trained and evaluated. Random
+                    Forest, XGBoost, and CNN performed the best.
+                  </p>
+
+                  <span class="timeline-tags">
+                    <span class="tag">Python</span>
+                    <span class="tag">Scikit-learn</span>
+                    <span class="tag">TensorFlow</span>
+                    <span class="tag">CNN</span>
+                    <span class="tag">Random Forest</span>
+                    <span class="tag">Machine Learning</span>
+                    <span class="tag">Data Analysis</span>
+                  </span>
+
+                  <a
+                    href="https://github.com/Nadim-Mahmud/Activity-detection-using-ML-model"
+                    class="btn btn-portfolio mt-2"
+                    target="_blank"
+                    >Project Link</a
+                  >
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+              <div class="card portfolio-card h-100">
+                <img
+                  src="./assets/photos/urban_sprawl_detection.png"
+                  class="card-img-top"
+                  alt="Urban Sprawl Detection Project"
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Urban Sprawl Detection (GIS)</h5>
+                  <p class="card-subtitle mb-2 text-muted">
+                    Nov 2024 – Dec 2024
+                  </p>
+                  <p class="card-text">
+                    Analyzed urban sprawl in Dhaka using remote sensing and GIS
+                    with USGS data. Computed and visualized NDBI, SAVI, MNDWI,
+                    and IBI indices for land use assessment and spatiotemporal
+                    analysis of urban growth.
+                  </p>
+
+                  <span class="timeline-tags">
+                    <span class="tag">Python</span>
+                    <span class="tag">GIS</span>
+                    <span class="tag">Remote Sensing</span>
+                    <span class="tag">QGIS</span>
+                    <span class="tag">USGS</span>
+                    <span class="tag">Data Analysis</span>
+                    <span class="tag">Urban Planning</span>
+                  </span>
+
+                  <a
+                    href="https://github.com/Nadim-Mahmud/Urban-Sprawl-Detection/tree/main"
+                    class="btn btn-portfolio mt-2"
+                    target="_blank"
+                    >Project Link</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <!--============ Education Section ==========-->
-      <div class="container py-5" id="education">
+      <div class="container py-sm-5" id="education">
         <div
           class="position-relative d-flex align-items-center justify-content-center py-sm-5"
         >
-          <h1
-            class="display-3 fw-normal text-uppercase text-accent-color heading-education"
-          >
-            E D U C A T I O N
-          </h1>
+          <h1 class="text-accent-color heading">E d u c a t i o n</h1>
         </div>
-        <div class="contents">
-          <div class="box bg-green-theme">
-            <div class="row">
-              <div class="col-2">
-                <img
-                  class="rounded work-icon"
-                  src="assets/icons/miami-university-logo.svg"
-                  alt="Thearp Logo"
-                />
-              </div>
-              <div class="col">
-                <p class="fs-6 fw-light fst-italic">2024 - 2026</p>
-                <h6 class="fs-5 fw-bold">MSCS in Computer Science</h6>
-                <h6>
-                  Miami University, Oxford, Ohio |
-                  <a
-                    href="https://miamioh.edu/"
-                    class="link-info"
-                    target="_blank"
-                    >visit</a
-                  >
-                </h6>
-              </div>
-            </div>
-          </div>
-          <div class="box bg-green-theme">
-            <div class="row">
-              <div class="col-2">
-                <img
-                  class="rounded work-icon"
-                  src="assets/icons/ru-logo.png"
-                  alt="Thearp Logo"
-                />
-              </div>
-              <div class="col">
-                <p class="fs-6 fw-light fst-italic">2017 - 2022</p>
-                <h6 class="fs-5 fw-bold">
-                  Bsc. in Computer Science & Engineering
-                </h6>
-                <h6>
-                  University of Rajshahi, Rajshahi, Bangladesh |
-                  <a href="https://ru.ac.bd/" class="link-info" target="_blank"
-                    >visit</a
-                  >
-                </h6>
-                <p>
-                  <strong>Deans listed each 4 years</strong>
-                </p>
-              </div>
+
+        <div class="timeline">
+          <!-- MSCS -->
+          <div class="timeline-item">
+            <div class="timeline-date">Aug 2024 - May 2026</div>
+            <div class="timeline-content bg-green-theme">
+              <h3>MSCS in Computer Science</h3>
+              <h5>
+                <a
+                  href="https://miamioh.edu/"
+                  target="_blank"
+                  class="company-link"
+                >
+                  Miami University, Oxford, Ohio
+                </a>
+              </h5>
+              <ul>
+                <li>
+                  Pursuing advanced coursework in Machine Learning, AI, and Data
+                  Science
+                </li>
+                <li>
+                  Research on wheelchair accessibility and AI-based routing
+                </li>
+                <li>Hands-on projects with LLMs and multimodal data fusion</li>
+              </ul>
             </div>
           </div>
 
-          <div class="box bg-green-theme">
-            <div class="row">
-              <div class="col-2"></div>
-              <div class="col">
-                <h6 class="fs-5 fw-bold">
-                  Higher Secondary School Certificate
-                </h6>
-                <h6>Sreepur Ramnagar Degree College</h6>
-                <p class="fs-6">
-                  <strong>Science </strong>
-                </p>
-              </div>
+          <!-- BSc CSE -->
+          <div class="timeline-item">
+            <div class="timeline-date">Jan 2017 - May 2022</div>
+            <div class="timeline-content bg-green-theme">
+              <h3>BSc. in Computer Science & Engineering</h3>
+              <h5>
+                <a
+                  href="https://ru.ac.bd/"
+                  target="_blank"
+                  class="company-link"
+                >
+                  University of Rajshahi, Rajshahi, Bangladesh
+                </a>
+              </h5>
+              <ul>
+                <li>
+                  Dean's List every year for outstanding academic performance
+                </li>
+                <li>
+                  Strong foundation in Algorithms, Data Structures, and Software
+                  Engineering
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- HSC -->
+          <div class="timeline-item">
+            <div class="timeline-date">2013 - 2016</div>
+            <div class="timeline-content bg-green-theme">
+              <h3>Higher Secondary School Certificate</h3>
+              <h5>Sreepur Ramnagar Degree College</h5>
+              <ul>
+                <li>Major: Science</li>
+              </ul>
             </div>
           </div>
         </div>
       </div>
-    </div>
 
-    <div class="container py-5" id="publications">
-      <div
-        class="position-relative d-flex align-items-center justify-content-center py-sm-5"
-      >
-        <h1
-          class="display-3 fw-normal text-uppercase text-accent-color heading-education"
+      <!-- ============= Publications Section ============= -->
+
+      <div class="container py-5" id="publications">
+        <div
+          class="position-relative d-flex align-items-center justify-content-center py-sm-5"
         >
-          P U B L I C A T I O N S
-        </h1>
-      </div>
-      <div class="contents">
-        <div class="box bg-green-theme">
-          <div class="row">
-            <div class="col">
-              <p class="fs-6 fw-light fst-italic">2024</p>
-              <h6 class="fs-5 fw-bold">
-                OmniAcc: Personalized Accessibility Assistant Using Generative
-                AI
-              </h6>
+          <h1 class="fw-normal heading">P u b l i c a t i o n s</h1>
+        </div>
+
+        <div class="timeline">
+          <!-- Using timeline-item styling for card layout -->
+
+          <!-- Publication 1 -->
+          <div class="timeline-item">
+            <div class="timeline-date">2024</div>
+            <div class="timeline-content">
+              <h3>
+                <a
+                  href="assets/pdf/AAAI_2025.pdf"
+                  target="_blank"
+                  class="company-link"
+                  >OmniAcc: Personalized Accessibility Assistant Using
+                  Generative AI</a
+                >
+              </h3>
               <p class="fs-6">
                 <b>Authors:</b> S. Karki, E. Han, N. Mahmud, S. Bhunia, J.
                 Femiani, and V. Raychoudhury
               </p>
-              <h6>
-                Workshop on AI for Urban Planning, AAAI 2025’s Workshop, 2025 |
-                <a
-                  href="assets/pdf/AAAI_2025.pdf"
-                  class="link-info"
-                  target="_blank"
-                  >visit</a
-                >
-              </h6>
+              <h5>Workshop on AI for Urban Planning, AAAI 2025 Workshop</h5>
               <p class="fs-6"><b>Type:</b> Workshop</p>
+              <div class="timeline-tags">
+                <span class="tag">AI</span>
+                <span class="tag">Accessibility</span>
+                <span class="tag">LLM</span>
+                <span class="tag">Generative AI</span>
+              </div>
             </div>
           </div>
         </div>
       </div>
+
+      <!-- ============= Contact Section ============= -->
+      <section id="contact" class="py-5">
+        <div class="container">
+          <div class="card p-4">
+            <h2 class="mb-4 text-center">Contact Information</h2>
+            <div class="contact-grid">
+              <div class="contact-item">
+                <h5><i class="fab fa-github-square"></i> &nbsp; GitHub</h5>
+                <p>
+                  <a href="https://github.com/Nadim-Mahmud" target="_blank">
+                    github.com/Nadim-Mahmud
+                  </a>
+                </p>
+              </div>
+
+              <div class="contact-item">
+                <h5><i class="fab fa-linkedin"></i> &nbsp; LinkedIn</h5>
+                <p>
+                  <a
+                    href="https://www.linkedin.com/in/nadim-mahmud/"
+                    target="_blank"
+                  >
+                    linkedin.com/in/nadim-mahmud
+                  </a>
+                </p>
+              </div>
+
+              <div class="contact-item">
+                <h5><i class="fas fa-envelope"></i> &nbsp; Email</h5>
+                <p>
+                  <a href="mailto:mahmudnadim16@gmail.com"
+                    >mahmudnadim16@gmail.com</a
+                  >
+                </p>
+              </div>
+
+              <div class="contact-item">
+                <h5><i class="fas fa-phone"></i> &nbsp; Phone</h5>
+                <p><a href="tel:+15135290845">+1 (xxx) xxx-xx36</a></p>
+              </div>
+
+              <div class="contact-item">
+                <h5><i class="fas fa-map-marker-alt"></i> &nbsp; Address</h5>
+                <p>
+                  McVey Data Science Building 364, Miami University
+                  <br />Oxford, OH 45056 <br />United States
+                </p>
+              </div>
+
+              <div class="contact-item">
+                <h5><i class="fas fa-clock"></i> &nbsp; Office Hours</h5>
+                <p>Monday – Friday<br />9:00 AM – 5:00 PM PST</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
 
     <!-- ============= Footer Section ============= -->
@@ -525,50 +933,65 @@
     <div class="bg-green-theme-contrast m-0 py-1"></div>
     <footer class="bg-green-theme" id="contacts">
       <div class="container-fluid py-5">
-        <div class="d-flex align-items-center justify-content-center text-dark">
+        <!-- Social Links -->
+        <div class="d-flex flex-wrap justify-content-center gap-3 mb-4">
           <a
             href="https://www.linkedin.com/in/nadim121/"
-            class=""
             target="_blank"
+            class="footer-social-buttons"
           >
-            <i class="fab fa-linkedin fa-2x footer-social-buttons"></i>
+            <i class="fab fa-linkedin fa-2x"></i>
           </a>
-          <a href="https://github.com/Nadim-Mahmud" class="" target="_blank">
-            <i class="fab fa-github-square fa-2x footer-social-buttons"></i>
+          <a
+            href="https://github.com/Nadim-Mahmud"
+            target="_blank"
+            class="footer-social-buttons"
+          >
+            <i class="fab fa-github-square fa-2x"></i>
           </a>
           <a
             href="https://www.instagram.com/nadim_mahmud__/"
-            class=""
             target="_blank"
+            class="footer-social-buttons"
           >
-            <i class="fab fa-instagram fa-2x footer-social-buttons"></i>
+            <i class="fab fa-instagram fa-2x"></i>
           </a>
           <a
             href="https://web.facebook.com/nadim.12321/"
-            class=""
             target="_blank"
+            class="footer-social-buttons"
           >
-            <i class="fab fa-facebook-square fa-2x footer-social-buttons"></i>
+            <i class="fab fa-facebook-square fa-2x"></i>
           </a>
           <a
             href="https://www.youtube.com/channel/UC7eBG9m_BePlKOEZdo1wFPQ"
-            class=""
             target="_blank"
+            class="footer-social-buttons"
           >
-            <i class="fab fa-youtube-square fa-2x footer-social-buttons"></i>
+            <i class="fab fa-youtube-square fa-2x"></i>
           </a>
           <a
             href="https://join.skype.com/invite/vlG71fpVx3Le"
-            class=""
             target="_blank"
+            class="footer-social-buttons"
           >
-            <i class="fab fa-skype fa-2x footer-social-buttons"></i>
+            <i class="fab fa-skype fa-2x"></i>
           </a>
         </div>
+
+        <!-- Contact Info -->
+        <div
+          class="d-flex flex-column flex-md-row justify-content-center align-items-center gap-4 text-dark mb-3"
+        >
+          <div><strong>Email:</strong> mahmudnadim16@gmail.com</div>
+          <div><strong>Location:</strong> Oxford - 45056, OH, USA</div>
+        </div>
+
+        <!-- Copyright -->
         <div
           class="d-flex align-items-center justify-content-center text-dark m-0 py-2"
         >
-          <p>© All rights reserved</p>
+          <p class="text-black">© All rights reserved | Nadim Mahmud</p>
         </div>
       </div>
     </footer>
