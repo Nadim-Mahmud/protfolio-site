@@ -327,19 +327,20 @@ body {
 }
 
 .btn-portfolio {
-  background-color: var(--bg-green);
-  color: var(--bg-color);
-  font-weight: 600;
-  border-radius: 20px;
-  padding: 0.4rem 1rem;
-  transition: transform 0.2s ease, background-color 0.3s ease;
-  text-decoration: none;
-  display: inline-block;
+    margin-top: 16px;
+    background-color: var(--bg-green);
+    color: var(--bg-color);
+    font-weight: 600;
+    border-radius: 20px;
+    padding: 0.4rem 1rem;
+    transition: transform 0.2s ease, background-color 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
 }
 
 .btn-portfolio:hover {
-  color: var(--bg-color-contrast);
-background-color: var(--bg-green);
+    color: var(--bg-color-contrast);
+    background-color: var(--bg-green);
 }
 
 /* ================  About Section ============= */
@@ -502,6 +503,16 @@ background-color: var(--bg-green);
     line-height: 1.6;
 }
 
+.contact-item a {
+    color: var(--bg-green);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.contact-item a:hover {
+    color: var(--bg-yellow-theme);
+}
 
 
 /* ========================= Footer ================ */
