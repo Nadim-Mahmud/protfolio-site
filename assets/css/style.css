@@ -1,12 +1,37 @@
+body {
+    font-family: 'Inter', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    color: var(--text-color);
+    margin: 0 0 1rem 0;
+}
+
+h1 { font-size: 3rem; line-height: 1.2; }
+h2 { font-size: 2.25rem; line-height: 1.3; }
+h3 { font-size: 1.75rem; line-height: 1.35; }
+
+
 html {
-    font-family: sans-serif;
-    line-height: 1.15;
+    font-family: 'Inter', sans-serif;
+    line-height: 1.5; /* slightly more readable */
     -webkit-text-size-adjust: 100%;
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    scroll-behavior: smooth; /* smooth scrolling */
+}
+
 :root {
     --bg-green: #2aa876;
+    --light-green: hsla(156, 60%, 41%, 0.104);
 
     --bg-color: #ffffff;
     --bg-color-contrast: #222222;
@@ -54,10 +79,29 @@ html {
 }
 
 
-p, ul {
+p{
     color: var(--paragraph-text-color);
     font: 400 1rem/1.625rem "Open Sans", sans-serif;
     line-height: 1.2rem;
+}
+
+ul {
+    color: var(--paragraph-text-color);  /* text color */
+    font: 400 1rem/1.8rem "Open Sans", sans-serif; /* increase line-height for spacing */
+    padding-left: 1rem;               /* indent bullets */
+    list-style-type: disc;              /* default bullets */
+    list-style-position: inside;        /* optional: bullet inside padding */
+}
+
+ul li {
+    margin-bottom: 0.1rem;              /* space between lines */
+    position: relative;                  /* needed for custom bullet */
+}
+
+/* Custom bullet color */
+ul li::marker {
+    color: var(--bg-green);              /* bullet color */
+    font-size: 1.4rem;                     /* optional: adjust bullet size */
 }
 
 h1 {
@@ -136,6 +180,13 @@ body {
     -webkit-text-stroke-color: var(--text-color); /* stroke color from your theme */
     text-align: center; /* optional: center alignment */
     line-height: 2; /* spacing */
+}
+
+.pmy-0 {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
 }
 
 /* Optional: responsive adjustment */
@@ -285,14 +336,18 @@ body {
 /* ================  Portfolio Section ============= */
 /* Portfolio Cards */
 .portfolio-card {
-  background: var(--bg-color);
-  border-radius: 16px;
-  box-shadow: 0 4px 15px var(--shadow-theme);
-  box-shadow: 0px 4px 16px 0px var(--shadow-theme);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  overflow: hidden;
-  margin-bottom: 20px;
-  border: 1px solid #f1f5f9;
+    background: var(--bg-color);
+    border-radius: 16px;
+    box-shadow: 0 4px 15px var(--shadow-theme);
+    box-shadow: 0px 4px 16px 0px var(--shadow-theme);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+    margin-bottom: 20px;
+    border: 1px solid #f1f5f9;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .portfolio-card:hover{
@@ -336,6 +391,7 @@ body {
     transition: transform 0.2s ease, background-color 0.3s ease;
     text-decoration: none;
     display: inline-block;
+    align-self: center;
 }
 
 .btn-portfolio:hover {
@@ -357,7 +413,7 @@ body {
 /* Timeline Card */
 .timeline {
     position: relative;
-    max-width: 800px;
+    max-width: 1000px;
     margin: 0 auto;
     padding-left: 5px; /* space for the timeline line */
     z-index: 1
@@ -431,33 +487,17 @@ body {
 }
 
 .company-link {
-    color: var(--bg-green-contrast); /* green theme color for links */
-    text-decoration: none; /* remove underline */
+    display: inline-block; /* allows pseudo-element to position correctly */
+    position: relative;    /* needed for ::after positioning */
+    color: var(--bg-green);
+    text-decoration: none;
     font-weight: 600;
-    position: relative;
-    transition: all 0.3s ease;
-}
-
-.company-link::after {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 2px;
-    bottom: -2px;
-    left: 0;
-    background: var(--bg-green-contrast); /* underline in theme color */
-    transform: scaleX(0);
-    transform-origin: right;
-    transition: transform 0.3s ease;
-}
-
-.company-link:hover::after {
-    transform: scaleX(1);
-    transform-origin: left;
+    transition: color 0.3s ease;
 }
 
 .company-link:hover {
-    color: var(--bg-green-theme-contrast); /* hover color */
+    color: var(--bg-green-theme-contrast); /* text color change on hover */
+    text-decoration: underline;
 }
 
 .timeline-tags {
@@ -479,10 +519,16 @@ body {
 .card {
     background: var(--bg-color);
     border-radius: 12px;
-    padding: 24px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     margin-bottom: 20px;
     border: 1px solid var(--shadow-theme);
+}
+
+.card-carrer {
+    border: none;
+    box-shadow: none;
+    padding-left: 5px;
+    background-color: var(--light-green);
 }
 
 .contact-grid {
@@ -504,14 +550,21 @@ body {
 }
 
 .contact-item a {
-    color: var(--bg-green);
+    color: var(--bg-color-contrast);
     text-decoration: none;
     font-weight: 600;
     transition: color 0.3s ease;
 }
 
 .contact-item a:hover {
-    color: var(--bg-yellow-theme);
+    color: var(--bg-green);
+    text-decoration: underline;
+}
+
+.contact-item h5 {
+    color: var(--bg-green);
+    font-weight: 600;
+    margin-bottom: 8px;
 }
 
 
