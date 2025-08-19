@@ -360,11 +360,6 @@ body {
   object-fit: cover;
 }
 
-.portfolio-card .card-title {
-  font-weight: 600;
-  font-size: 1.2rem;
-}
-
 .portfolio-card .card-subtitle {
   font-size: 0.85rem;
 }
