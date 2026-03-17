@@ -241,8 +241,9 @@ a:hover { color: var(--accent-dark); text-decoration: underline; }
   font-size: 15.5px;
   line-height: 1.85;
   color: var(--text);
-  max-width: 720px;
+  /* max-width: 720px; */
   margin-bottom: 28px;
+  text-align: justify;
 }
 
 #about .bio strong {
