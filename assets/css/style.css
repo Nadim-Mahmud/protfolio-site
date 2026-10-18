@@ -13,10 +13,10 @@
 :root {
   --white:        #ffffff;
   --bg:           #ffffff;
-  --border:       #e5e1da;
-  --text:         #18181b;
-  --text-muted:   #71717a;
-  --text-light:   #a1a1aa;
+  --border:       #e3e8ef;
+  --text:         #1d2a3a;
+  --text-muted:   #627083;
+  --text-light:   #94a1b2;
   --accent:       #ea580c;
   --accent-dark:  #c2410c;
   --accent-soft:  #fff7ed;
@@ -47,7 +47,7 @@ a:hover { color: var(--accent-dark); text-decoration: underline; }
    ========================================= */
 
 #site-header {
-  background: linear-gradient(160deg, #ffffff 0%, #fff8f3 60%, #fff1e6 100%);
+  background: linear-gradient(160deg, #ffffff 0%, #f8fafc 60%, #f1f5f9 100%);
   border-top: 3.5px solid var(--accent);
   border-bottom: 1px solid var(--border);
   padding: 52px 0 44px;
