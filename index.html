@@ -168,6 +168,27 @@
     </noscript>
   </head>
   <body>
+    <!-- ================================================ NAV -->
+    <nav id="site-nav" aria-label="Portfolio sections">
+      <button class="nav-arrow" id="nav-prev" type="button" hidden
+        aria-label="Scroll navigation left" aria-controls="nav-links">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m14 6-6 6 6 6" /></svg>
+      </button>
+      <div class="nav-inner" id="nav-links">
+        <a href="#about" class="active" data-tab="about" aria-current="location">About</a>
+        <a href="#publications" data-tab="publications">Publications</a>
+        <a href="#projects" data-tab="projects">Projects</a>
+        <a href="#experience" data-tab="experience">Experience</a>
+        <a href="#education" data-tab="education">Education</a>
+        <a href="#extracurricular" data-tab="extracurricular">Extra Curricular</a>
+        <a href="#news" data-tab="news">Gallery</a>
+      </div>
+      <button class="nav-arrow" id="nav-next" type="button" hidden
+        aria-label="Scroll navigation right" aria-controls="nav-links">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m10 6 6 6-6 6" /></svg>
+      </button>
+    </nav>
+
     <!-- ================================================ HEADER -->
     <header id="site-header">
       <div class="header-inner">
@@ -265,27 +286,6 @@
         </div>
       </div>
     </header>
-
-    <!-- ================================================ NAV -->
-    <nav id="site-nav" aria-label="Portfolio sections">
-      <button class="nav-arrow" id="nav-prev" type="button" hidden
-        aria-label="Scroll navigation left" aria-controls="nav-links">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m14 6-6 6 6 6" /></svg>
-      </button>
-      <div class="nav-inner" id="nav-links">
-        <a href="#about" class="active" data-tab="about" aria-current="location">About</a>
-        <a href="#publications" data-tab="publications">Publications</a>
-        <a href="#projects" data-tab="projects">Projects</a>
-        <a href="#experience" data-tab="experience">Experience</a>
-        <a href="#education" data-tab="education">Education</a>
-        <a href="#extracurricular" data-tab="extracurricular">Extra Curricular</a>
-        <a href="#news" data-tab="news">News</a>
-      </div>
-      <button class="nav-arrow" id="nav-next" type="button" hidden
-        aria-label="Scroll navigation right" aria-controls="nav-links">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m10 6 6 6-6 6" /></svg>
-      </button>
-    </nav>
 
     <!-- ================================================ MAIN -->
     <div class="page-layout">
