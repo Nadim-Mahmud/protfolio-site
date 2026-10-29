@@ -1146,6 +1146,56 @@ a[href^="mailto:"]:hover { color: #1e40af; text-decoration: underline; }
   color: var(--accent);
 }
 
+/* ── Image lightbox ── */
+.pub-thumb, .project-thumb { cursor: zoom-in; }
+
+.lightbox-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: rgba(29, 29, 31, 0.55);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  cursor: zoom-out;
+  animation: modalFadeIn 0.2s ease;
+}
+
+.lightbox-overlay[hidden] { display: none; }
+
+.lightbox-img {
+  max-width: min(100%, 1100px);
+  max-height: 100%;
+  object-fit: contain;
+  border-radius: 18px;
+  box-shadow: 0 24px 64px rgba(0,0,0,0.4);
+  animation: modalSlideUp 0.22s ease;
+  cursor: default;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 18px;
+  right: 20px;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,0.5);
+  background: rgba(255,255,255,0.25);
+  color: #fff;
+  font-size: 22px;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lightbox-close:hover { background: rgba(255,255,255,0.4); }
+
 /* ── Mini popup (email / CV) ── */
 .mini-popup-overlay {
   position: fixed;
