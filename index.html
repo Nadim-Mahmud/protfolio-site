@@ -170,9 +170,10 @@
   <body>
     <!-- ================================================ NAV -->
     <nav id="site-nav" aria-label="Portfolio sections">
-      <button class="nav-arrow" id="nav-prev" type="button" hidden
-        aria-label="Scroll navigation left" aria-controls="nav-links">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m14 6-6 6 6 6" /></svg>
+      <button class="nav-toggle" id="nav-toggle" type="button"
+        aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="nav-links">
+        <span class="nav-toggle-label" id="nav-current">About</span>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" /></svg>
       </button>
       <div class="nav-inner" id="nav-links">
         <a href="#about" class="active" data-tab="about" aria-current="location">About</a>
@@ -183,10 +184,6 @@
         <a href="#extracurricular" data-tab="extracurricular">Extra Curricular</a>
         <a href="#news" data-tab="news">Gallery</a>
       </div>
-      <button class="nav-arrow" id="nav-next" type="button" hidden
-        aria-label="Scroll navigation right" aria-controls="nav-links">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m10 6 6 6-6 6" /></svg>
-      </button>
     </nav>
 
     <!-- ================================================ HEADER -->
@@ -2371,30 +2368,24 @@
         var navLinks = document.querySelectorAll(".nav-inner a[data-tab]");
         var panels = document.querySelectorAll(".section-panel");
         var navTrack = document.getElementById("nav-links");
-        var navPrev = document.getElementById("nav-prev");
-        var navNext = document.getElementById("nav-next");
+        var navToggle = document.getElementById("nav-toggle");
+        var navCurrent = document.getElementById("nav-current");
+        var siteNav = document.getElementById("site-nav");
 
-        function updateNavArrows() {
-          navPrev.disabled = navTrack.scrollLeft <= 2;
-          navNext.disabled = navTrack.scrollLeft + navTrack.clientWidth >= navTrack.scrollWidth - 2;
+        function setNavOpen(open) {
+          siteNav.classList.toggle("open", open);
+          navToggle.setAttribute("aria-expanded", open ? "true" : "false");
         }
 
-        function scrollNav(direction) {
-          navTrack.scrollBy({
-            left: direction * Math.max(120, navTrack.clientWidth * 0.75),
-            behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches
-              ? "instant" : "smooth",
-          });
-        }
-
-        navPrev.hidden = false;
-        navNext.hidden = false;
-        navPrev.addEventListener("click", function () { scrollNav(-1); });
-        navNext.addEventListener("click", function () { scrollNav(1); });
-        navTrack.addEventListener("scroll", updateNavArrows, { passive: true });
-        window.addEventListener("resize", updateNavArrows);
-        window.addEventListener("load", updateNavArrows);
-        window.requestAnimationFrame(updateNavArrows);
+        navToggle.addEventListener("click", function () {
+          setNavOpen(!siteNav.classList.contains("open"));
+        });
+        document.addEventListener("click", function (e) {
+          if (!siteNav.contains(e.target)) setNavOpen(false);
+        });
+        document.addEventListener("keydown", function (e) {
+          if (e.key === "Escape") setNavOpen(false);
+        });
 
         function showTab(tabId) {
           var panel = document.getElementById(tabId);
@@ -2411,6 +2402,7 @@
             if (a.getAttribute("data-tab") === tabId) {
               a.classList.add("active");
               a.setAttribute("aria-current", "location");
+              navCurrent.textContent = a.textContent;
             }
           });
           return true;
@@ -2439,6 +2431,7 @@
             e.preventDefault();
             var tabId = this.getAttribute("data-tab");
             if (!showTab(tabId)) return;
+            setNavOpen(false);
             if (window.location.hash !== "#" + tabId) {
               window.history.pushState(null, "", "#" + tabId);
             }

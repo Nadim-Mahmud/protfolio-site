@@ -88,8 +88,9 @@ a[href^="mailto:"]:hover { color: #1e40af; text-decoration: underline; }
 #site-header {
   max-width: 1160px;
   margin: 0 auto 14px;
-  border-radius: 32px;
-  padding: 18px 0;
+  border-radius: 0 0 32px 32px;
+  border-top: 0;
+  padding: 104px 0 28px; /* clears the floating nav */
 }
 
 .header-inner {
@@ -201,11 +202,12 @@ a[href^="mailto:"]:hover { color: #1e40af; text-decoration: underline; }
    ========================================= */
 
 #site-nav {
-  max-width: 1160px;
-  margin: 16px auto 14px;
+  width: min(1160px, calc(100% - 48px));
+  left: 50%;
+  transform: translateX(-50%);
   padding: 7px;
   border-radius: 999px;
-  position: sticky;
+  position: fixed;
   top: 16px;
   z-index: 100;
 }
@@ -219,17 +221,7 @@ a[href^="mailto:"]:hover { color: #1e40af; text-decoration: underline; }
 }
 .nav-inner::-webkit-scrollbar { display: none; }
 
-.nav-arrow { display: none; }
-.nav-arrow[hidden] { display: none; }
-.nav-arrow:disabled { opacity: 0.3; cursor: default; }
-.nav-arrow svg {
-  width: 20px;
-  height: 20px;
-  fill: none;
-  stroke: currentColor;
-  stroke-width: 1.8;
-  stroke-linecap: round;
-}
+.nav-toggle { display: none; }
 
 .nav-inner a {
   display: inline-block;
@@ -1504,33 +1496,50 @@ button.hlink {
 
 @media (max-width: 1216px) {
   #site-header { margin: 0 24px 14px; }
-  #site-nav { margin: 16px 24px 14px; }
   .page-layout { margin: 0 24px; }
 }
 
 @media (max-width: 720px) {
-  #site-header { margin: 0 14px 12px; padding: 16px 0; border-radius: 28px; }
+  #site-header { margin: 0 14px 12px; padding: 84px 0 20px; border-radius: 0 0 28px 28px; }
   #site-nav {
     top: 10px;
-    margin: 10px 14px 12px;
+    width: calc(100% - 28px);
     padding: 6px;
-    display: flex;
-    align-items: flex-start;
-    gap: 6px;
+    border-radius: 28px;
   }
-  .nav-arrow {
-    display: inline-flex;
+  .nav-toggle {
+    display: flex;
     align-items: center;
-    justify-content: center;
-    flex: 0 0 44px;
+    justify-content: space-between;
+    width: 100%;
     height: 44px;
-    padding: 0;
-    border: 1px solid var(--glass-border);
-    border-radius: 50%;
+    padding: 0 16px;
+    border: 0;
+    border-radius: 999px;
     color: var(--text);
-    background: rgba(255,255,255,0.55);
+    background: transparent;
+    font: inherit;
+    font-size: 15px;
+    font-weight: 600;
     cursor: pointer;
   }
+  .nav-toggle svg {
+    width: 22px;
+    height: 22px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.8;
+    stroke-linecap: round;
+  }
+  .nav-inner {
+    display: none;
+    flex-direction: column;
+    gap: 2px;
+    overflow: visible;
+    padding-top: 6px;
+  }
+  #site-nav.open .nav-inner { display: flex; }
+  .nav-inner a { flex: none; text-align: left; }
   .page-layout { margin: 0 14px; }
   .header-inner {
     flex-direction: column;
@@ -1545,10 +1554,14 @@ button.hlink {
   .header-links { justify-content: center; }
   .hlink { padding: 9px 13px; }
   .profile-photo { width: 108px; height: 108px; }
-  .nav-inner { flex: 1; min-width: 0; flex-wrap: nowrap; }
   .nav-inner a { padding: 11px 16px; }
   #main-content { padding: 0 0 36px; }
-  .stat-chip { padding: 10px 12px; }
+  .stats-row {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    overflow: visible;
+  }
+  .stat-chip { padding: 10px 12px; white-space: normal; }
   .about-section, .about-card { padding: 18px; }
   #about .bio { font-size: 14.5px; line-height: 1.7; }
   .pub-card, .project-card { flex-direction: column; }
