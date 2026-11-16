@@ -409,6 +409,7 @@ a[href^="mailto:"]:hover { color: #1e40af; text-decoration: underline; }
 }
 
 .stat-chip {
+  box-shadow: none;
   display: flex;
   flex: 1 0 auto;
   align-items: center;
