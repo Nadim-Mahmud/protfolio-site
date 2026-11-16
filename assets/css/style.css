@@ -21,9 +21,9 @@
   --accent-soft:  rgba(255, 255, 255, 0.58);
   --accent-mid:   rgba(0, 0, 0, 0.14);
   --glass:        linear-gradient(135deg, rgba(255,255,255,0.46), rgba(255,255,255,0.22));
-  --tag-bg:       rgba(255, 247, 237, 0.85);
-  --tag-text:     #c2410c;
-  --tag-border:   #fed7aa;
+  --tag-bg:       rgba(0, 0, 0, 0.05);
+  --tag-text:     #3a3a3c;
+  --tag-border:   rgba(0, 0, 0, 0.07);
   --glass-border: rgba(255, 255, 255, 0.55);
   --shadow-sm:    inset 0 1px 0 rgba(255,255,255,0.9), 0 4px 18px rgba(0,0,0,0.035);
   --shadow-md:    inset 0 1px 0 rgba(255,255,255,0.95), 0 12px 36px rgba(0,0,0,0.055);
@@ -87,10 +87,12 @@ a[href^="mailto:"]:hover { color: #1e40af; text-decoration: underline; }
 
 #site-header {
   max-width: 1160px;
-  margin: 0 auto 14px;
-  border-radius: 0 0 32px 32px;
+  margin: 0 auto;
+  border-radius: 0;
   border-top: 0;
-  padding: 104px 0 28px; /* clears the floating nav */
+  border-bottom: 0;
+  box-shadow: none;
+  padding: 40px 0 28px;
 }
 
 .header-inner {
@@ -178,9 +180,7 @@ a[href^="mailto:"]:hover { color: #1e40af; text-decoration: underline; }
   background: var(--accent-soft);
   color: var(--accent);
   text-decoration: none;
-  box-shadow: inset 0 1px 0 rgba(255,255,255,1),
-              0 4px 10px rgba(29,29,31,0.06),
-              0 12px 30px rgba(29,29,31,0.11);
+  box-shadow: 0 2px 8px rgba(29,29,31,0.08);
   transform: translateY(-1px);
 }
 
@@ -203,16 +203,19 @@ a[href^="mailto:"]:hover { color: #1e40af; text-decoration: underline; }
 
 #site-nav {
   width: min(1160px, calc(100% - 48px));
-  left: 50%;
-  transform: translateX(-50%);
-  padding: 7px;
-  border-radius: 999px;
-  position: fixed;
-  top: 16px;
+  margin: 0 auto 14px;
+  padding: 10px 14px;
+  border-radius: 0 0 32px 32px;
+  border-top: 1px solid rgba(0,0,0,0.08);
+  background: linear-gradient(180deg, rgba(0,0,0,0.035), rgba(255,255,255,0.45));
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.7), 0 6px 16px rgba(0,0,0,0.05);
+  position: sticky;
+  top: 0;
   z-index: 100;
 }
 
 .nav-inner {
+  position: relative;
   margin: 0 auto;
   display: flex;
   gap: 4px;
@@ -240,7 +243,7 @@ a[href^="mailto:"]:hover { color: #1e40af; text-decoration: underline; }
 
 .nav-inner a:hover {
   color: var(--text);
-  background: rgba(255,255,255,0.65);
+  background: rgba(0,0,0,0.06);
   text-decoration: none;
 }
 
@@ -480,9 +483,9 @@ a[href^="mailto:"]:hover { color: #1e40af; text-decoration: underline; }
   font-weight: 500;
   padding: 5px 12px;
   border-radius: 20px;
-  background: rgba(239, 246, 255, 0.8);
-  color: #1d4ed8;
-  border: 1px solid rgba(147, 197, 253, 0.6);
+  background: var(--tag-bg);
+  color: var(--tag-text);
+  border: 1px solid var(--tag-border);
 }
 .ri-tag svg {
   flex-shrink: 0;
@@ -607,9 +610,9 @@ a[href^="mailto:"]:hover { color: #1e40af; text-decoration: underline; }
 
 .tag {
   font-size: 11px;
-  font-weight: 600;
-  padding: 3px 9px;
-  border-radius: 5px;
+  font-weight: 500;
+  padding: 3px 10px;
+  border-radius: 999px;
   background: var(--tag-bg);
   color: var(--tag-text);
   border: 1px solid var(--tag-border);
@@ -681,19 +684,28 @@ a[href^="mailto:"]:hover { color: #1e40af; text-decoration: underline; }
   display: inline-flex;
   align-items: center;
   font-size: 11px;
-  font-weight: 700;
-  padding: 3px 10px;
-  border-radius: 5px;
-  background: var(--tag-bg);
-  color: var(--tag-text);
-  border: 1px solid var(--tag-border);
+  font-weight: 600;
+  padding: 4px 11px;
+  border-radius: 999px;
+  background: linear-gradient(145deg, #424244, #1d1d1f);
+  color: #fff;
+  border: 0;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.16);
   letter-spacing: 0.02em;
 }
 
 .pub-badge--accepted {
-  background: rgba(220, 252, 231, 0.85);
-  color: #166534;
-  border-color: #bbf7d0;
+  gap: 6px;
+  background: rgba(22, 163, 74, 0.1);
+  color: #15803d;
+  box-shadow: inset 0 0 0 1px rgba(22, 163, 74, 0.25);
+}
+.pub-badge--accepted::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #16a34a;
 }
 
 /* =========================================
@@ -1495,17 +1507,17 @@ button.hlink {
    ========================================= */
 
 @media (max-width: 1216px) {
-  #site-header { margin: 0 24px 14px; }
+  #site-header { margin: 0 24px; }
   .page-layout { margin: 0 24px; }
 }
 
 @media (max-width: 720px) {
-  #site-header { margin: 0 14px 12px; padding: 84px 0 20px; border-radius: 0 0 28px 28px; }
+  #site-header { margin: 0 14px; padding: 28px 0 20px; border-radius: 0; }
   #site-nav {
-    top: 10px;
+    margin: 0 auto 12px;
+    border-radius: 0 0 28px 28px;
     width: calc(100% - 28px);
     padding: 6px;
-    border-radius: 28px;
   }
   .nav-toggle {
     display: flex;
